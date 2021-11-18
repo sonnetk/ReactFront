@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Menu from "./components/Menu";
+import '/home/user/app-react/src/styles/style.css';
+import PageReact from "./components/Pages/pageReact";
+import PageJS from "./components/Pages/pageJS";
+import PageCSS from "./components/Pages/pageCSS";
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+          <div>
+              <Menu />
+              <Routes>
+                  <Route path="/" element={
+                      <h2>Начальная страница. Выберите вкладку</h2>
+                  } />
+                  <Route path="/react" element={<PageReact />} />
+                  <Route path="/javascript" element={<PageJS />} />
+                  <Route path="/css" element={<PageCSS />} />
+                  <Route
+                      path="/*"
+                      element={
+                          <h2>Страницы не существует</h2>
+                      }
+                  />
+              </Routes>
+          </div>
+      </BrowserRouter>
   );
 }
 
-export default App;
