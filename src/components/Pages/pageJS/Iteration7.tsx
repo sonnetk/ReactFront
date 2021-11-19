@@ -44,7 +44,7 @@ class Iteration7 extends React.Component {
             } catch (err:unknown) {
                 if ( err instanceof Error){
                     console.log(err.stack)
-                    this.setState({...this.state, textSpan: `Ошибка HTTP: ${err.stack}`});
+                    this.setState({...this.state, textSpan: `Ошибка HTTP: ${err.message}`});
                 }
             }
             setTimeout(() => console.log(this.state), 0)
