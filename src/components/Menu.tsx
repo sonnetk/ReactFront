@@ -7,6 +7,7 @@ function Menu() {
         <aside>
             <div className="nav">
                 <ul className="menu">
+                    <li><NavLink className='superLi' to='/context'>Context</NavLink></li>
                     <li><NavLink className='superLi' to='/react'>React</NavLink></li>
                     <li><NavLink className='superLi' to='/javascript'>JavaScript</NavLink></li>
                     <li><NavLink className='superLi' to='/css'>HTML+CSS</NavLink></li>

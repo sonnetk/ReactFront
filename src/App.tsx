@@ -9,6 +9,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import PageContext from "./components/Pages/pageContext";
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
                   <Route path="/" element={
                       <h2>Начальная страница. Выберите вкладку</h2>
                   } />
+                  <Route path="/context" element={<PageContext />} />
                   <Route path="/react" element={<PageReact />} />
                   <Route path="/javascript" element={<PageJS />} />
                   <Route path="/css" element={<PageCSS />} />
