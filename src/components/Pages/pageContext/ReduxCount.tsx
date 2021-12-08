@@ -8,7 +8,7 @@ function ReduxCount() {
             <h3>iteration 13.
                 Счетчик (Redux) </h3>
             <div className='post'>
-                dasa
+                <button>Изменить</button>
             </div>
         </div>
     )
