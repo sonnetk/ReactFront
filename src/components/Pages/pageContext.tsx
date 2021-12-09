@@ -8,7 +8,7 @@ function PageContext() {
     return(
         <div>
             <div className='area'>
-                <h2>Context</h2>
+                <h2>Context/Redux</h2>
                 <Count />
                 <ReduxCount />
             </div>

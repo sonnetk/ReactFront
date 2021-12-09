@@ -3,33 +3,46 @@ import ReactDOM from 'react-dom'; //Импорт реакт дома, чтобы
 import App from './App';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {createStore} from "redux";
-import {Provider} from "react-redux";
-
-
-const countReducer = function (state = 0, action: { type: string }) {
-    switch (action.type) {
-        case "INCREMENT":
-            return state + 1;
-        case "DECREMENT":
-            return state - 1;
-        default:
-            return state;
-    }
-};
-
-const store = createStore(countReducer)
-
+// import {createStore} from "redux";
+// import {Provider, connect} from "react-redux";
+//
+//
+// const countReducer = function (state = 0, action: { type: string }) {
+//     switch (action.type) {
+//         case "INCREMENT":
+//             return state + 1;
+//         case "DECREMENT":
+//             return state - 1;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const store = createStore(countReducer)
+//
+// const mapStateToProps = (state: number) => {
+//     return {
+//         count: state
+//     };
+// };
+//
+// const mapDispatchToProps = (dispatch:any) => {
+//     return {
+//         handleIncrementClick: () => dispatch({type: 'INCREMENT' }),
+//         handleDecrementClick: () => dispatch({type: 'DECREMENT'})
+//     }
+// };
+//
+// const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+//
 
 ReactDOM.render(
-    <Provider store={store}>
         <div className="App">
             <div className="grid">
                 <Header />
                 <App/>
                 <Footer />
             </div>
-        </div>
-    </Provider>,
+        </div>,
   document.getElementById('root')
 );
