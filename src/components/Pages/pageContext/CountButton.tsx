@@ -8,9 +8,13 @@ function CountButton(props: {prop: number}) {
 
    const value = useContext(Context)
 
+    const handlerClick = () => {
+        value.count(props.prop)
+    }
+
     return(
         <>
-            <button onClick={value.count(props.prop)}>+{props.prop}</button>
+            <button onClick={handlerClick}>+{props.prop}</button>
         </>
     )
 }
