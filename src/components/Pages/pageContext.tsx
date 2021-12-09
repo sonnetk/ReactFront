@@ -1,7 +1,7 @@
 import React from "react";
 import '/home/user/app-react/src/styles/style.css';
-import Count from "./pageContext/Count";
-import ReduxCount from "./pageContext/ReduxCount";
+import Count from "./pageContext/Context/Count";
+import ReduxCount from "./pageContext/Redux/ReduxCount";
 
 
 function PageContext() {

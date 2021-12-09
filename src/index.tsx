@@ -3,14 +3,33 @@ import ReactDOM from 'react-dom'; //Импорт реакт дома, чтобы
 import App from './App';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+
+
+const countReducer = function (state = 0, action: { type: string }) {
+    switch (action.type) {
+        case "INCREMENT":
+            return state + 1;
+        case "DECREMENT":
+            return state - 1;
+        default:
+            return state;
+    }
+};
+
+const store = createStore(countReducer)
+
 
 ReactDOM.render(
-    <div className="App">
-        <div className="grid">
-            <Header />
-            <App/>
-            <Footer />
+    <Provider store={store}>
+        <div className="App">
+            <div className="grid">
+                <Header />
+                <App/>
+                <Footer />
+            </div>
         </div>
-    </div>,
+    </Provider>,
   document.getElementById('root')
 );
