@@ -1,10 +1,16 @@
 import React from "react";
 import '/home/user/app-react/src/styles/style.css';
 // import { useDispatch, useSelector } from "react-redux";
-import {createStore} from "redux";
+import {createStore, applyMiddleware} from "redux";
 import {Provider, connect} from "react-redux";
+import thunk from "redux-thunk";
 
-
+interface MyInterface{
+    count:number,
+    handleIncrementClick: () => void,
+    handleDecrementClick: () => void,
+    handleClick: () => void
+}
 
 function ReduxCount() {
     // const dispatch = useDispatch()
@@ -24,12 +30,14 @@ function ReduxCount() {
                 return state + 1;
             case "DECREMENT":
                 return state - 1;
+            case "SETTIMEOUT":
+                return state + 10;
             default:
                 return state;
         }
     };
 
-    const store = createStore(countReducer)
+    const store = createStore(countReducer, applyMiddleware(thunk))
 
     const mapStateToProps = (state: number) => {
         return {
@@ -37,21 +45,27 @@ function ReduxCount() {
         };
     };
 
+    const handleClickApp = () => {
+        return (dispatch:any) => {
+            setTimeout(()=>{dispatch({type: 'SETTIMEOUT'})}, 2000);
+        }
+    }
+    
     const mapDispatchToProps = (dispatch:any) => {
         return {
             handleIncrementClick: () => dispatch({type: 'INCREMENT' }),
-            handleDecrementClick: () => dispatch({type: 'DECREMENT'})
+            handleDecrementClick: () => dispatch({type: 'DECREMENT'}),
+            handleClick: () =>  dispatch(handleClickApp()),
         }
     };
 
-
-    const Cont = ({count, handleIncrementClick, handleDecrementClick}:
-                      {count:number, handleIncrementClick: () => void,
-                          handleDecrementClick: () => void}) => (
+    const Cont = ({count, handleIncrementClick, handleDecrementClick, handleClick}:
+                      MyInterface) => (
         <div className='buttons'>
-            <button onClick={handleIncrementClick}>Добавить</button>
+            <button onClick={handleIncrementClick}>+1</button>
             <h3>{count}</h3>
-            <button onClick={handleDecrementClick}>Вычесть</button>
+            <button onClick={handleDecrementClick}>-1</button>
+            <button onClick={handleClick}>+10</button>
         </div>
     );
 
