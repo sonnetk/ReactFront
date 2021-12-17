@@ -3,8 +3,7 @@ import '/home/user/app-react/src/styles/style.css';
 import Iteration5 from "./pageJS/Iteration5";
 import Iteration6 from "./pageJS/Iteration6";
 import Iteration7 from "./pageJS/Iteration7";
-import {ClContext} from "./ClContext";
-
+import {ClContext} from "../../App";
 
 
 class PageJS extends React.Component{
@@ -14,15 +13,18 @@ class PageJS extends React.Component{
                     <h2>JavaScript</h2>
                     <h3> iteration 5.
                         iteration 11 - Жизненный цикл в функциональных компонентах</h3>
-                    <Iteration5 />
+                    <Iteration5/>
                     <h3> iteration 6</h3>
-                    <Iteration6 />
+                    <ClContext.Consumer>
+                        {number => (
+                            <Iteration6 value={number}/>
+                        )}
+                    </ClContext.Consumer>
                     <h3> iteration 7</h3>
                     <Iteration7 />
                 </div>
         )
     }
 }
-PageJS.contextType = ClContext;
 
 export default PageJS;

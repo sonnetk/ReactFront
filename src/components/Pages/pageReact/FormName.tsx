@@ -2,8 +2,6 @@ import React, {useState, useMemo, useCallback, useEffect} from "react";
 import '/home/user/app-react/src/styles/style.css'
 // import frog from '../styles/images/frog.gif';
 
-
-
 // Кастомный хук
 function useMyEffect(test: (text: string) => void , message: string){
 
@@ -18,7 +16,7 @@ function createUser(name:string , surname: string ){
     return user
 }
 
-function FormName() {
+function FormName({value}:any) {
 
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -66,8 +64,8 @@ function FormName() {
                 <div className='count'>
                     Счёт: {count}
                     <button className='btn'
-                        onClick={() => setCount(0)}
-                    >
+                        onClick={() => {setCount(0);
+                        console.log(value)}}>
                         Сбросить
                     </button>
                     <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>

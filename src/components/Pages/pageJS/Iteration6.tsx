@@ -1,9 +1,7 @@
 import React from "react";
 import '/home/user/app-react/src/styles/style.css';
 
-const clickURL = () => {
-    alert(window.location.href)
-}
+
 
 const clickBOM = () => {
     console.clear()
@@ -47,7 +45,12 @@ const clickLS = () => {
 
 }
 
-function Iteration6 () {
+function Iteration6 ({value}:any) {
+    const clickURL = () => {
+        alert(window.location.href)
+        console.log(value)
+    }
+
     return (
         <div>
             <div className='areaJS'>

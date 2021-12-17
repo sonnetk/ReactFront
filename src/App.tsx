@@ -10,30 +10,33 @@ import {
   Routes
 } from "react-router-dom";
 import PageContext from "./components/Pages/pageContext";
+import {ClContext} from "./ClContext";
 
 
 export default function App() {
   return (
-      <BrowserRouter>
-          <div>
-              <Menu />
-              <Routes>
-                  <Route path="/" element={
-                      <h2>Начальная страница. Выберите вкладку</h2>
-                  } />
-                  <Route path="/context" element={<PageContext />} />
-                  <Route path="/react" element={<PageReact />} />
-                  <Route path="/javascript" element={<PageJS />} />
-                  <Route path="/css" element={<PageCSS />} />
-                  <Route
-                      path="/*"
-                      element={
-                          <h2>Страницы не существует</h2>
-                      }
-                  />
-              </Routes>
-          </div>
-      </BrowserRouter>
+      <ClContext.Provider value={number.two}>
+          <BrowserRouter>
+              <div>
+                  <Menu />
+                  <Routes>
+                      <Route path="/" element={
+                          <h2>Начальная страница. Выберите вкладку</h2>
+                      } />
+                      <Route path="/context" element={<PageContext />} />
+                      <Route path="/react" element={<PageReact />} />
+                      <Route path="/javascript" element={<PageJS />} />
+                      <Route path="/css" element={<PageCSS />} />
+                      <Route
+                          path="/*"
+                          element={
+                              <h2>Страницы не существует</h2>
+                          }
+                      />
+                  </Routes>
+              </div>
+          </BrowserRouter>
+      </ClContext.Provider>
   );
 }
 

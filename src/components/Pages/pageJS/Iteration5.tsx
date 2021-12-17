@@ -8,7 +8,6 @@ interface MyState {
     colorBut: string,
 }
 
-
 class Iteration5 extends React.Component<{},MyState> {
 
         state: MyState = {
@@ -17,6 +16,7 @@ class Iteration5 extends React.Component<{},MyState> {
             color: 'none',
             colorBut: 'none',
         };
+    // static contextType = ThemeContext;
 
     render() {
         if (this.state.visibility){
@@ -126,5 +126,4 @@ class Iteration5 extends React.Component<{},MyState> {
         console.log('cl - Конец жизненного цикла компоненты')
     }
 }
-
 export default Iteration5;
