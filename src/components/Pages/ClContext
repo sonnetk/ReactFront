@@ -1,0 +1,10 @@
+import React from "react";
+
+export const number:{one: number, two:number} = {
+    one: 1,
+    two: 2
+}
+
+export const ClContext = React.createContext(
+    number.one // значение по умолчанию
+);

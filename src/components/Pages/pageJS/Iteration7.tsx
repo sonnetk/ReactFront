@@ -5,10 +5,6 @@ interface MyObj{
     name:string,
 }
 
-type Obje = {
-    status: string;
-}
-
 class Iteration7 extends React.Component {
 
     state = {
