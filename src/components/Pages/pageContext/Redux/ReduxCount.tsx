@@ -15,11 +15,11 @@ interface MyInterface{
 function ReduxCount() {
     // const dispatch = useDispatch()
     // const countRedux = useSelector(state => state)
-    //
+
     // const handleDecrementClick = () => {
     //     dispatch({ type: 'INCREMENT' })
     // }
-    //
+
     // const handleIncrementClick = () => {
     //     dispatch({ type: 'DECREMENT' })
     // }

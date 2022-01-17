@@ -10,12 +10,19 @@ import {
   Routes
 } from "react-router-dom";
 import PageContext from "./components/Pages/pageContext";
-import {ClContext} from "./ClContext";
+
+export const number:{one: number, two:number} = {
+    one: 1,
+    two: 2
+}
+export const ClContext = React.createContext(
+    number // значение по умолчанию
+);
 
 
 export default function App() {
   return (
-      <ClContext.Provider value={number.two}>
+      <ClContext.Provider value={number}>
           <BrowserRouter>
               <div>
                   <Menu />

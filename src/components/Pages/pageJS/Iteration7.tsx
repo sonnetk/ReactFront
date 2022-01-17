@@ -24,6 +24,12 @@ class Iteration7 extends React.Component {
             })
             .catch(error =>  this.setState({ ...this.state, textSpan: error.message}));
         setTimeout(() => console.log(this.state), 0)
+
+
+        const myPromise = new Promise(function (resolve, reject){
+            setTimeout(function (){resolve('Hi')}, 2000);
+        })
+        myPromise.then(function (value){alert(value)}, function (value){alert(value)})
     }
 
     clickAsync = () => {

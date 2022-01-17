@@ -98,6 +98,8 @@ class Iteration5 extends React.Component<{},MyState> {
         this.setState(state => ({
             color: '#d3d3d3'
         }));
+        let a: any = document.getElementById('inputOne') as HTMLInputElement
+        a.style.color = 'red'
     }
 
     inputOneBlur = () => {
@@ -113,8 +115,9 @@ class Iteration5 extends React.Component<{},MyState> {
 
     shouldComponentUpdate() {
         console.log('cl - Можно обновиться')
-        return true
+        return false
     }
+
 
     componentDidUpdate() {
         console.log('cl - Отрисовка обновилась')

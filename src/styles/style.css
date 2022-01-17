@@ -69,7 +69,7 @@ section, h1, li, img {
     transition: width 1s ease-in-out, left 1.5s ease-in-out;
 }
 
-/*.animateDiv {*/
+/*.areaJS {*/
 /*    animation: rotate 3s cubic-bezier(0, -0.02, 1, 0.96) infinite;*/
 /*}*/
 
@@ -404,4 +404,8 @@ button:hover {
 .buttons{
     display: flex;
     justify-content: space-evenly;
+}
+
+.about p::first-letter{
+    font-size: 100px;
 }

@@ -2,7 +2,6 @@ import React from "react";
 import '/home/user/app-react/src/styles/style.css';
 
 
-
 const clickBOM = () => {
     console.clear()
     console.log(window.history)
@@ -10,6 +9,7 @@ const clickBOM = () => {
     console.info('Информация')
     console.warn('Предупреждение')
     console.error('Ошибка')
+
 }
 
 const back = () => window.history.back()
